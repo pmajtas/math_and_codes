@@ -3,7 +3,11 @@
 all: compile run
 
 compile:
-	g++ -I ./header/ ./src/tb_main.cpp  -o ./exec
+	mkdir out
+	g++ -I ./header/  ./src/*.cpp ./tb/tb_main.cpp  -o ./out/exec
 
 run:
-	./exec
+	./out/exec	
+
+clean:
+	rm -rf ./out/
