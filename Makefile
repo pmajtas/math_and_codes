@@ -1,6 +1,6 @@
 
 
-all: compile run
+all: clean compile run
 
 compile:
 	mkdir -p out
