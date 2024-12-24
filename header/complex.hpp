@@ -1,5 +1,5 @@
 
-template <typename T = int> 
+template <typename T = float> 
 struct Complex { 
   T re; 
   T im;
@@ -27,5 +27,12 @@ struct Complex {
     return ret;
   }
 
+  Complex operator/(Complex num){
+    Complex<float> ret;
+    int D = (num.re*num.re + num.im*num.im);
+    ret.re = (this->re * num.re + this->im * num.im)/(num.re*num.re + num.im*num.im);
+    ret.im = (this->im * num.re - this->re * num.im)/(num.re*num.re + num.im*num.im);
+    return ret;
+  }
 
 };
