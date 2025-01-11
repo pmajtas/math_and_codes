@@ -13,8 +13,9 @@ int complex_test(){
     Complex<> c5 = c1-c2;
     Complex<> c6 = c1+c2;
     Complex<> c7 = c2/c1;
+    Complex<> c8 = c1.conj();
 
     std::cout << "Complex c3 re: " << c3.re << " im: " << c3.im << std::endl;
-    std::cout << __FUNCTION__ << " passed." << std::endl;
+    std::cout << "In " << __FUNCTION__ <<  " all operations passed." << std::endl;
     return 0;
 }

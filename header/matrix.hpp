@@ -1,3 +1,6 @@
+#ifndef MATRIX_HPP_
+#define MATRIX_HPP_
+
 #include <vector>
 #include <iostream>
 
@@ -19,7 +22,7 @@ class Matrix{
 
     Matrix<T> operator*(Matrix<T> B)
     {
-        Matrix<T> Y(0,0);   
+        Matrix<T> Y(0,0);
         if(this->columns!=B.rows)
         {
             std::cout << "Error: wrong matrices' sizes" << std::endl;
@@ -41,7 +44,7 @@ class Matrix{
         Y.rows = this->rows;
         Y.columns = B.columns;
         return Y;
-    }  
+    }
 
 };
 
@@ -77,3 +80,5 @@ float Matrix<T>::MatrixMean(Matrix<T>  A)
     
     return  (sum/(rows * cols));
 }
+
+#endif

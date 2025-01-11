@@ -1,3 +1,5 @@
+#pragma once
+#include "math.hpp"
 
 template <typename T = float> 
 struct Complex { 
@@ -33,6 +35,15 @@ struct Complex {
     ret.re = (this->re * num.re + this->im * num.im)/(num.re*num.re + num.im*num.im);
     ret.im = (this->im * num.re - this->re * num.im)/(num.re*num.re + num.im*num.im);
     return ret;
+  }
+
+  Complex conj(){
+    Complex ret(this->re, -1*this->im);
+    return ret;
+  }
+
+  float abs(){
+    return math::sqrt(this->re*this->re + this->im*this->im);
   }
 
 };
